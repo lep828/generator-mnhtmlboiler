@@ -1,12 +1,11 @@
-var ITEM_INDEX = CD.param('mi_item_index');
+var URL_PARAMS = {};
 var URL = '';
 
 init();
 
 function init(){
-  
+  getQS();
   // CD.getCORS(url, renderContent);
-  
 }
 
 function renderContent(raw){
@@ -19,3 +18,14 @@ function renderContent(raw){
 
 }
 
+
+function getQS(){
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    while (match = search.exec(query))
+       URL_PARAMS[decode(match[1])] = decode(match[2]);
+}
