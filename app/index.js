@@ -60,12 +60,6 @@ module.exports = generators.Base.extend({
         validate : function(input){
           return true; // actually need to validate
         }
-      },
-      {
-        type    : "list",
-        name    : "css",
-        message : "CSS or SCSS",
-        choices : ["CSS", "SCSS"]
       }
     ];
 
@@ -97,18 +91,11 @@ module.exports = generators.Base.extend({
     css : function(){
 
       // Styles
-      if(this.answers.css === 'CSS'){
-        this.fs.copyTpl(
-          this.templatePath('_css/_styles.css'),
-          this.destinationPath('css/styles.css')
-        );
-      } else{
-        this.fs.copyTpl(
-          this.templatePath('_css/_styles.scss'),
-          this.destinationPath('css/styles.scss')
-        );
-      }
-
+      this.fs.copyTpl(
+        this.templatePath('_css/_styles.css'),
+        this.destinationPath('css/styles.css')
+      );
+    
     },
 
     js : function(){
