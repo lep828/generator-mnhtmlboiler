@@ -1,0 +1,22 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#container.hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+#container.hidden * {
+  visibility: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  position: absolute;
+  left: -999px;
+}
+
+#container{
+
+}
