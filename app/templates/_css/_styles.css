@@ -16,7 +16,15 @@
   position: absolute;
   left: -999px;
 }
-
 #container{
 
+}
+.row{
+  display:block;
+}
+.row:after{
+  content: '';
+  width:1px;
+  height:1px;
+  visibility: hidden;
 }
