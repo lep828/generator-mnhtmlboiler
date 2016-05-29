@@ -12,12 +12,12 @@ function init(){
 
 function removeScripts(raw){
 
-  raw = raw.replace(/<script src=/g, '<noscript class="mi-script-src" data-script-url=');
+  raw = raw.replace(/<script src=/g, '<noscript class="script-src" data-script-url=');
   raw = raw.replace(/<script/g, '<noscript class="script-inline"');
   raw = raw.replace(/<\/script/g, "<\/noscript");
   raw = raw.replace(/onload=/g, "data-onload=");
   raw = raw.replace(/src=/g, "data-src=");
-  
+
   return raw;
 }
 
